@@ -14,18 +14,18 @@ PARAMS = [
 
 
 # =========================
-# BLOQUE 1: SQL CALIBRATION
+# BLOQUE 1: SQL CALIBRACION
 # =========================
 
 def parse_sql_table(data):
     base = 0x00
 
     result = {
-        "band_4_7": {sql: {} for sql in SQLS},
-        "band_1_3": {sql: {} for sql in SQLS},
+        "band_4-7": {sql: {} for sql in SQLS},
+        "band_1-3": {sql: {} for sql in SQLS},
     }
 
-    for band_index, band in enumerate(["band_4_7", "band_1_3"]):
+    for band_index, band in enumerate(["band_4-7", "band_1-3"]):
         band_base = base + band_index * 0x60
 
         for sql in SQLS:
@@ -37,7 +37,7 @@ def parse_sql_table(data):
 
 
 # =========================
-# PRINT SQL
+# MUESTRA SQL
 # =========================
 
 def print_sql(sql):
@@ -72,10 +72,6 @@ def export_sql_csv(sql, filename="Calibracion.csv"):
                 fila.extend(sql[band][s][param] for s in SQLS)
                 writer.writerow(fila)
 
-
-# =========================
-# FULL PARSER
-# =========================
 
 def parse_file(path):
     with open(path, "rb") as f:
