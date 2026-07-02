@@ -74,19 +74,6 @@ def export_sql_csv(sql, filename="Calibracion.csv"):
 
 
 # =========================
-# DUMP HEX BLOCK
-# =========================
-#
-#def dump_block(data, start, end, title):
-#    print(f"\n=== {title} ({start:04X}-{end-1:04X}) ===")
-#
-#    for addr in range(start, end, 16):
-#        row = data[addr:addr+16]
-#        hexs = " ".join(f"{b:02X}" for b in row)
-#        ascii = "".join(chr(b) if 32 <= b < 127 else "." for b in row)
-#        print(f"{addr:04X}: {hexs:<47} | {ascii}")
-#
-# =========================
 # FULL PARSER
 # =========================
 
